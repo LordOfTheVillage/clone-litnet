@@ -29,7 +29,7 @@ export const BookElement = ({
         <div className="flex flex-col items-start">
           <div className="mb-3 text-xl font-bold leading-5">{title}</div>
 
-          <div className="mb-2 flex flex-wrap gap-x-3 ">
+          <div className="mb-2 flex flex-wrap gap-x-3 dark:text-black">
             {categories.map((item) => (
               <div className="max-w-full truncate rounded-md bg-slate-200 p-1 text-sm">
                 {item}

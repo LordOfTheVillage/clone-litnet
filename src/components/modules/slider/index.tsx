@@ -29,24 +29,24 @@ export const Slider = ({ title, books }: SliderProps) => {
 
   return (
     <div className="flex flex-col">
-      <h2 className="text-2xl mb-9">{title}</h2>
-      <div className="h-full relative">
-        <div className={`flex gap-x-5 justify-center`}>
+      <h2 className="mb-9 text-2xl">{title}</h2>
+      <div className="relative h-full">
+        <div className={`flex justify-center gap-x-5`}>
           {slides.map((item, index) => (
             <SliderElement key={index} book={item} />
           ))}
         </div>
         <button
-          className="flex justify-center items-center absolute top-0 left-0 bg-white bg-opacity-60 px-3 h-full hover:bg-opacity-80 "
+          className="absolute top-0 left-0 flex h-full items-center justify-center bg-white bg-opacity-60 px-3 hover:bg-opacity-80 dark:bg-zinc-800 dark:bg-opacity-60 dark:hover:bg-opacity-80"
           onClick={handleClickLeft}
         >
-          <Arrow className="rotate-180" />
+          <Arrow className="rotate-180 dark:fill-white" />
         </button>
         <button
-          className="flex justify-center items-center absolute top-0 right-0 bg-white bg-opacity-60 px-3 h-full hover:bg-opacity-80"
+          className="absolute top-0 right-0 flex h-full items-center justify-center bg-white bg-opacity-60 px-3 hover:bg-opacity-80 dark:bg-zinc-800 dark:bg-opacity-60 dark:hover:bg-opacity-80"
           onClick={handleClickRight}
         >
-          <Arrow />
+          <Arrow className="dark:fill-white" />
         </button>
       </div>
     </div>

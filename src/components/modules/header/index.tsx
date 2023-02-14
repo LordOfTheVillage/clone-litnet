@@ -8,6 +8,7 @@ import { CloseButton } from "../../ui/close-button";
 import { Modal } from "../../ui/modal";
 import { Categories } from "../categories";
 import { Link } from "react-router-dom";
+import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
 
 interface HeaderProps {
   isUser?: boolean;
@@ -35,9 +36,16 @@ const navItems = [
 export const Header = ({ isUser = true }: HeaderProps) => {
   const [burgerMenuDisplay, setBurgerMenuDisplay] = useState(false);
   const [categoriesModalDisplay, setCategoriesModalDisplay] = useState(false);
+  const [isDark, setIsDark] = useState(localStorage.theme === "dark");
+
+  const handleChangeMode = () => {
+    setIsDark(!isDark);
+    document.querySelector("html")?.classList.toggle("dark");
+    localStorage.theme = !isDark ? "dark" : "light";
+  };
 
   return (
-    <header className="fixed z-10 flex h-16 w-full justify-center bg-white bg-opacity-60 shadow backdrop-blur-sm">
+    <header className="fixed z-10 flex h-16 w-full justify-center bg-white bg-opacity-60  backdrop-blur-sm dark:bg-zinc-800 dark:bg-opacity-60">
       <Wrapper className="flex items-center justify-between">
         <Link to="/">
           <Logo className="sm:mr-5 lg:mr-10" />
@@ -87,6 +95,15 @@ export const Header = ({ isUser = true }: HeaderProps) => {
             className="sm:hidden"
           />
         </nav>
+        {
+          <button onClick={handleChangeMode}>
+            {isDark ? (
+              <BsFillMoonFill className="ml-2 text-xl text-indigo-400" />
+            ) : (
+              <BsFillSunFill className="ml-2 text-xl text-indigo-400" />
+            )}
+          </button>
+        }
         <div className="flex items-center gap-x-2 ">
           <Burger
             onClick={() => setBurgerMenuDisplay(!burgerMenuDisplay)}

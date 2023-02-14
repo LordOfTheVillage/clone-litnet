@@ -10,20 +10,20 @@ interface SidebarElementProps {
 
 export const SidebarElement = ({ book }: SidebarElementProps) => {
   return (
-    <a href="" className="flex items-start w-full sm:h-20 lg:h-32">
+    <a href="" className="flex w-full items-start sm:h-20 lg:h-32">
       <img
         src={book.img}
         alt=""
-        className="w-2/5 h-full mr-2 object-cover rounded-md lg:w-1/3"
+        className="mr-2 h-full w-2/5 rounded-md object-cover lg:w-1/3"
       />
-      <div className="flex flex-col items-start w-3/5 gap-y-1 lg:w-2/3">
-        <div className="truncate max-w-full text-xs p-1 bg-slate-200 rounded-md">
+      <div className="flex w-3/5 flex-col items-start gap-y-1 lg:w-2/3">
+        <div className="max-w-full truncate rounded-md bg-slate-200 p-1 text-xs dark:text-black">
           {book.category}
         </div>
-        <div className="truncate max-w-full text-sm font-bold">
+        <div className="max-w-full truncate text-sm font-bold">
           {book.title}
         </div>
-        <div className="truncate max-w-full text-xs">{book.author}</div>
+        <div className="max-w-full truncate text-xs">{book.author}</div>
       </div>
     </a>
   );

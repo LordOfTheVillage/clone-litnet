@@ -9,11 +9,11 @@ interface ModalProps {
 export const Modal = ({ children, displayModal }: ModalProps) => {
   return (
     <div
-      className="flex w-screen h-screen absolute z-20 top-0 left-0 bg-black bg-opacity-50 justify-center items-center"
+      className="absolute top-0 left-0 z-20 flex h-screen w-screen items-center justify-center bg-black bg-opacity-50"
       onClick={() => displayModal(false)}
     >
       <div
-        className="bg-white flex items-center justify-center py-10 px-8 w-screen h-screen absolute top-0 left-0 sm:w-auto sm:min-w-[400px] sm:h-auto sm:relative"
+        className="absolute top-0 left-0 flex h-screen w-screen items-center justify-center bg-white py-10 px-8 dark:bg-zinc-800 sm:relative sm:h-auto sm:w-auto sm:min-w-[400px]"
         onClick={(e) => e.stopPropagation()}
       >
         <CloseButton onClick={() => displayModal(false)} />

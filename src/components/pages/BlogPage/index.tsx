@@ -65,7 +65,7 @@ const BlogPage = () => {
     <Wrapper>
       <PageWrapper isTop={true}>
         <h3 className="self-start text-2xl font-medium">{mockBlog.title}</h3>
-        <div className="flex w-full items-center justify-between self-start bg-gray-50 py-2 px-4">
+        <div className="flex w-full items-center justify-between self-start bg-gray-50 py-2 px-4 dark:bg-zinc-700">
           <p className="text-xs">
             Автор: <span className="text-blue-500">{mockBlog.author}</span> /
             Добавлено: {mockBlog.datePosted}

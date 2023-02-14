@@ -1,7 +1,6 @@
 import { Wrapper } from "../../ui/wrapper";
 import { SecondaryButton } from "../../ui/secodary-button";
 
-import "./gradient.css";
 import { Modal } from "../../ui/modal";
 import { UserMenu } from "../user-menu";
 import { useState } from "react";
@@ -25,7 +24,7 @@ export const PersonalHeader = ({ isUser = true }: PersonalHeaderProps) => {
   const [userModalDisplay, setUserModalDisplay] = useState(false);
 
   return (
-    <Wrapper className="gradient mb-10 flex h-72 w-full flex-col justify-between bg-indigo-400 pt-24 sm:pt-24">
+    <Wrapper className="mb-10 flex h-72  w-full flex-col justify-between bg-gradient-to-t from-white to-indigo-400 pt-24 dark:bg-gradient-to-t dark:from-zinc-800 dark:to-indigo-400 sm:pt-24">
       <div className="flex w-full gap-x-5">
         <img src={blog.img} alt="" className="h-32 w-32 rounded object-cover" />
         <div className="flex flex-col items-start gap-2">
