@@ -24,7 +24,7 @@ const navItems = [
   },
   {
     title: "Моя страница",
-    link: `users/1`,
+    link: `users/1/books`,
   },
   {
     title: "Игра",
