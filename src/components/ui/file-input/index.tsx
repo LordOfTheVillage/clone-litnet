@@ -24,6 +24,7 @@ export const FileInput = ({ className }: FileInputProps) => {
         className={`${className} rounded border-2 border-zinc-200 object-cover`}
       />
       <input
+        required
         type="file"
         onChange={onLoadFile}
         className={`absolute top-0 left-0 flex cursor-pointer opacity-0 ${className}`}
