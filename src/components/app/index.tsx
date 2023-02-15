@@ -25,6 +25,7 @@ import BlogPage from "../pages/BlogPage";
 import ContestRules from "../pages/ContestPage/ContestRules";
 import ContestBooks from "../pages/ContestPage/ContestBooks";
 import { AuthProvider } from "../context/AuthContext";
+import { AccountAddBook } from "../pages/Account/AccountAddBook";
 
 const client = new QueryClient();
 
@@ -131,6 +132,10 @@ const router = createBrowserRouter([
           {
             path: "add-blog",
             element: <AccountAddBlog />,
+          },
+          {
+            path: "add-book",
+            element: <AccountAddBook />,
           },
         ],
       },
