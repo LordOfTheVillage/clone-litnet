@@ -7,7 +7,7 @@ import axios from "axios";
 import { BlogType } from "../../../types/pocketbaseTypes";
 import { useQuery } from "@tanstack/react-query";
 import {
-  useComments,
+  useBlogComments,
   useUserDataDependent,
 } from "../../../hooks/pocketbaseHelpers";
 
@@ -32,7 +32,7 @@ const BlogPage = () => {
 
   const userData = useUserDataDependent(userId);
 
-  const blogComments = useComments("blogComments", id!);
+  const blogComments = useBlogComments(id!);
 
   if (blogComments.isSuccess) {
     console.log(blogComments.data);

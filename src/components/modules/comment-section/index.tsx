@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { CommentType } from "../../../types/pocketbaseTypes";
+import { BookCommentType, CommentType } from "../../../types/pocketbaseTypes";
 import { CommentElement } from "../../ui/comment-element";
 import Button from "../../ui/button";
 
 type CommentSectionProps = {
-  comments: CommentType[];
+  comments: CommentType[] | BookCommentType[];
 };
 
 const CommentSection: React.FC<CommentSectionProps> = ({ comments }) => {
