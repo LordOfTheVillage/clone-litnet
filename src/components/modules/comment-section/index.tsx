@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CommentType } from "../../../types/types";
+import { CommentType } from "../../../types/pocketbaseTypes";
 import { CommentElement } from "../../ui/comment-element";
 import Button from "../../ui/button";
 
@@ -28,10 +28,11 @@ const CommentSection: React.FC<CommentSectionProps> = ({ comments }) => {
       <div className="flex flex-col gap-6">
         {comments.map((comment) => (
           <CommentElement
-            image={comment.image}
-            name={comment.name}
-            date={comment.date}
-            content={comment.content}
+            key={comment.id}
+            userId={comment.userId}
+            created={comment.created}
+            id={comment.id}
+            text={comment.text}
           />
         ))}
       </div>

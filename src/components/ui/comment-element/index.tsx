@@ -1,23 +1,29 @@
 import { Avatar } from "../avatar";
 import { ElementWrapper } from "../element-wrapper";
+import { getImagePath, useUserData } from "../../../hooks/pocketbaseHelpers";
+import avatar from "../../../common/assets/images/avatar.png";
+import { CommentType } from "../../../types/pocketbaseTypes";
 
-interface CommentElementProps {
-  image: string;
-  name: string;
-  date: string;
-  content: string;
-}
-
-export const CommentElement = ({
-  image,
-  name,
-  date,
-  content,
-}: CommentElementProps) => {
+export const CommentElement = ({ id, userId, text, created }: CommentType) => {
+  const userData = useUserData(userId);
   return (
-    <ElementWrapper className="flex w-full flex-col justify-center gap-y-4">
-      <Avatar image={image} name={name} date={date} />
-      <p className="text-sm">{content}</p>
-    </ElementWrapper>
+    <>
+      {userData.isSuccess ? (
+        <ElementWrapper className="flex w-full flex-col justify-center gap-y-4">
+          <Avatar
+            image={
+              userData.data.avatar !== ""
+                ? getImagePath("users", userData.data.id, userData.data.avatar)
+                : avatar
+            }
+            name={userData.data.name}
+            date={created}
+          />
+          <p className="text-sm">{text}</p>
+        </ElementWrapper>
+      ) : (
+        <p>loading...</p>
+      )}
+    </>
   );
 };
